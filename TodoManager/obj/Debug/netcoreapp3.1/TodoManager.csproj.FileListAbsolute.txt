@@ -1,0 +1,15 @@
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.exe
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.deps.json
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.runtimeconfig.json
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.runtimeconfig.dev.json
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.dll
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.pdb
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.csprojAssemblyReference.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.Form1.resources
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.csproj.GenerateResource.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.AssemblyInfoInputs.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.AssemblyInfo.cs
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.csproj.CoreCompileInputs.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.dll
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.pdb
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.genruntimeconfig.cache

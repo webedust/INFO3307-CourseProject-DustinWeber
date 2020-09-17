@@ -1,0 +1,4 @@
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.csprojAssemblyReference.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.AssemblyInfoInputs.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.AssemblyInfo.cs
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.csproj.CoreCompileInputs.cache
