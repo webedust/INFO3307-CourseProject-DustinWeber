@@ -5,7 +5,6 @@ G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\T
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.dll
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\bin\Debug\netcoreapp3.1\TodoManager.pdb
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.csprojAssemblyReference.cache
-G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.Form1.resources
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.csproj.GenerateResource.cache
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.AssemblyInfoInputs.cache
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.AssemblyInfo.cs
@@ -13,3 +12,4 @@ G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\T
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.dll
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.pdb
 G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.genruntimeconfig.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManager\obj\Debug\netcoreapp3.1\TodoManager.MainForm.resources
