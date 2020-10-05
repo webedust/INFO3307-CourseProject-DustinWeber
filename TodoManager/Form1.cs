@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace TodoManager
@@ -12,14 +11,33 @@ namespace TodoManager
             InitializeComponent();
         }
 
-        void ButtonSave_Click(object sender, EventArgs e)
+        void ButtonCreate_Click(object sender, EventArgs e)
         {
-            fileIO.SaveFile(Textbox.Text);
+            OpenCreateTask();
         }
 
-        void ButtonLoad_Click(object sender, EventArgs e)
+        void ButtonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+            OpenCreateTask();
+        }
+
+        void MainForm_Load(object sender, EventArgs e)
         {
             fileIO.LoadFile(OutputTextbox);
+        }
+
+        /// <summary>
+        ///  Opens <c>Form_CreateTask</c>
+        /// </summary>
+        void OpenCreateTask()
+        {
+            Form_CreateTask form_createTask = new Form_CreateTask();
+            form_createTask.Show();
         }
     }
 }
