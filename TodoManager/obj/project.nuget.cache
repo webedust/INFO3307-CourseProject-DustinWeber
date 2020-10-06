@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+Q1KU+8fgB1efQPl/qefkR9BIphkqfD/xfftH1nUGgMf7RMa8SOH/UL7iVFLr4CetQc7v92/jHQxbF0P3ts3Zg==",
+  "dgSpecHash": "uOO8nM73oadVPPpF1pPTHjIrCA9hB2UjappEXaBrX8YidLMXM0Nl2pqStX+mjlGSCcBH0uIdigZOXAoEXYIi7w==",
   "success": true,
   "projectFilePath": "G:\\User Data\\Github\\INFO3307-CourseProject\\TodoManager\\TodoManager.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

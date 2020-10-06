@@ -4,3 +4,19 @@
 
 /TodoManager/bin/Debug/netcoreapp3.1/Tasks
 /TodoManager/.vs/TodoManager/v16/TestStore/0
+*.pspimage
+/TodoManager/icon.png
+/TodoManagerTests/bin/Debug/netcoreapp3.1/cs
+/TodoManagerTests/bin/Debug/netcoreapp3.1/de
+/TodoManagerTests/bin/Debug/netcoreapp3.1/Microsoft.TestPlatform.CommunicationUtilities.dll
+/TodoManagerTests/bin/Debug/netcoreapp3.1/es
+/TodoManagerTests/bin/Debug/netcoreapp3.1/fr
+/TodoManagerTests/bin/Debug/netcoreapp3.1/it
+/TodoManagerTests/bin/Debug/netcoreapp3.1/ja
+/TodoManagerTests/bin/Debug/netcoreapp3.1/ko
+/TodoManagerTests/bin/Debug/netcoreapp3.1/pl
+/TodoManagerTests/bin/Debug/netcoreapp3.1/pt-BR
+/TodoManagerTests/bin/Debug/netcoreapp3.1/ru
+/TodoManagerTests/bin/Debug/netcoreapp3.1/tr
+/TodoManagerTests/bin/Debug/netcoreapp3.1/zh-Hans
+/TodoManagerTests/bin/Debug/netcoreapp3.1/zh-Hant
