@@ -29,7 +29,7 @@ namespace TodoManager
 
         void MainForm_Load(object sender, EventArgs e)
         {
-            io.UpdateFileCount();
+            io.LoadTasks();
             FillTasksList();
         }
 
@@ -50,14 +50,13 @@ namespace TodoManager
         public void FillTasksList()
         {
             // Variables
-            List<Task> tasks = io.GetTasks();
             int[] loc = new int[2]; // Location the buttons will be created at
                 loc[0] = TasksPanel.Location.X; // x, should not change
                 loc[1] = TasksPanel.Location.Y; // y, increment by button height
             int width = TasksPanel.Width;   // Width of each task button
             int height = 30; // Height of each task button
 
-            foreach (var t in tasks)
+            foreach (var t in io.tasks)
             {
                 Button b = new Button();
                 b.Name = "ButtonTask" + t.title;

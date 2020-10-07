@@ -24,7 +24,7 @@ namespace TodoManager
 
         void ButtonCreateTask_Click(object sender, EventArgs e)
         {
-            io.SaveFile(TextboxName.Text, TextboxDescription.Text);
+            io.SaveTask(TextboxName.Text, TextboxDescription.Text);
             main.FillTasksList();
             Close();
         }

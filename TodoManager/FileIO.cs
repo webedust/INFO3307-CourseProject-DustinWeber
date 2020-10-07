@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,21 +15,8 @@ namespace TodoManager
     public class FileIO
     {
         // Variables
-        List<Task> tasks; // List of all tasks read from files
+        public List<Task> tasks; // List of all tasks read from files
 
-
-        /// <summary>
-        ///  Returns files in Tasks directory
-        /// </summary>
-        public List<Task> GetTasks() { return tasks; }
-
-        /// <summary>
-        /// Sets <c>files</c> equal to the # of files in the Tasks directory
-        /// </summary>
-        public void UpdateFileCount() 
-        { 
-            Directory.EnumerateFiles(Application.StartupPath + "Tasks").Count(); 
-        }
 
         /// <summary>
         /// <para>Saves file to the Tasks directory</para>
@@ -40,7 +26,7 @@ namespace TodoManager
         /// <para>description = The description of the task</para>
         /// </c>
         /// </summary>
-        public void SaveFile(string title, string description)
+        public void SaveTask(string title, string description)
         {
             // Check if directory exists, create if it does NOT exist
             if (!Directory.Exists(Application.StartupPath + "\\Tasks\\"))
@@ -54,7 +40,9 @@ namespace TodoManager
             w.WriteLine("\t\t\"description\": " + "\"" + description +"\"");
             w.WriteLine("\t}\n]");
             w.Close();
-            UpdateFileCount();
+            // To-do: Change instead to only add the new file in this instance?
+            // Else iterating across all tasks unnecessarily
+            LoadTasks(); // Load all tasks again to update.
         }
 
         /// <summary>
@@ -65,27 +53,21 @@ namespace TodoManager
         /// <para>output = The textbox to output file contents to</para>
         /// </c>
         /// </summary>
-        public void LoadFile(string file, RichTextBox output)
+        public void LoadTasks()
         {
             string dir = Application.StartupPath + "Tasks";
-            string path = dir + "\\" + file + ".json";
-            // Ensure file exists
-            if (File.Exists(path))
-            {
-                StreamReader stream = new StreamReader(path);
-                if (output != null) { output.Text = stream.ReadToEnd(); }
-                stream.Close();
-            }
-            else // File does not exist
-            {
-                if (output != null) { output.Text = "File " + path + " does not exist."; }
-            }
+            DirectoryInfo d = new DirectoryInfo(dir);
+            List<FileInfo> files = d.GetFiles("*").ToList();
 
-            using (StreamReader r = new StreamReader(path))
+            if (tasks == null) tasks = new List<Task>();
+            foreach (FileInfo file in files)
             {
+                List<Task> newTask;
+                using StreamReader r = new StreamReader(file.FullName);
                 string json = r.ReadToEnd();
-                tasks = JsonConvert.DeserializeObject<List<Task>>(json);
-                output.Text = tasks[0].title.ToString();
+                newTask = JsonConvert.DeserializeObject<List<Task>>(json);
+                tasks.Add(newTask[0]);
+                r.Close();
             }
         }
     }
