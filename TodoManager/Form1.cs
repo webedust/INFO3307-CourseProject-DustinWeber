@@ -7,10 +7,12 @@ namespace TodoManager
 {
     public partial class MainForm : Form
     {
-        public MainForm() { InitializeComponent(); }
         // Variables
-        FileIO io = new FileIO();
-        MainForm main;
+        readonly FileIO io = new FileIO();
+        List<Button> taskBtns; // All buttons associated with a task loaded at runtime
+
+
+        public MainForm() { InitializeComponent(); }
 
         void ButtonCreate_Click(object sender, EventArgs e)
         {
@@ -29,7 +31,6 @@ namespace TodoManager
 
         void MainForm_Load(object sender, EventArgs e)
         {
-            io.LoadTasks();
             FillTasksList();
         }
 
@@ -39,7 +40,8 @@ namespace TodoManager
         void OpenCreateTask()
         {
             Form_CreateTask form_createTask = new Form_CreateTask();
-            main = (MainForm)Application.OpenForms[0];
+            MainForm main = (MainForm)Application.OpenForms[0];
+
             form_createTask.Show();
             form_createTask.OnShow(main);
         }
@@ -51,10 +53,27 @@ namespace TodoManager
         {
             // Variables
             int[] loc = new int[2]; // Location the buttons will be created at
-                loc[0] = TasksPanel.Location.X; // x, should not change
-                loc[1] = TasksPanel.Location.Y; // y, increment by button height
+            loc[0] = TasksPanel.Location.X; // x, should not change
+            loc[1] = TasksPanel.Location.Y; // y, increment by button height
             int width = TasksPanel.Width;   // Width of each task button
             int height = 30; // Height of each task button
+
+            // Disables & hides all task buttons if they have already been created
+            // This would apply when creating a new task so duplicate tasks are not shown
+            if (taskBtns != null)
+            {
+                for (int i = 0; i < taskBtns.Count; i++)
+                {
+                    Controls.Remove(taskBtns[i]);
+                    taskBtns[i].Enabled = false;
+                    taskBtns[i].Visible = false;
+                }
+                taskBtns.Clear();
+            }
+            else taskBtns = new List<Button>();
+
+
+            io.LoadTasks();
 
             foreach (var t in io.tasks)
             {
@@ -78,6 +97,7 @@ namespace TodoManager
 
                 // Increment location y by the height
                 loc[1] += height;
+                taskBtns.Add(b);
             }
         }
     }

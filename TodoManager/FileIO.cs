@@ -42,7 +42,7 @@ namespace TodoManager
             w.Close();
             // To-do: Change instead to only add the new file in this instance?
             // Else iterating across all tasks unnecessarily
-            LoadTasks(); // Load all tasks again to update.
+            LoadTasks(); // Load all tasks again to update
         }
 
         /// <summary>
@@ -60,8 +60,11 @@ namespace TodoManager
             List<FileInfo> files = d.GetFiles("*").ToList();
 
             if (tasks == null) tasks = new List<Task>();
+            else tasks.Clear();
+
             foreach (FileInfo file in files)
             {
+                // To-do: Try to optimize this, very inefficient.
                 List<Task> newTask;
                 using StreamReader r = new StreamReader(file.FullName);
                 string json = r.ReadToEnd();
@@ -69,6 +72,18 @@ namespace TodoManager
                 tasks.Add(newTask[0]);
                 r.Close();
             }
+        }
+
+        /// <summary>
+        /// <para>Deletes file from Tasks sub-directory</para>
+        /// <c>
+        /// <para>Parameters</para>
+        /// <para>filename = The name of the file to delete</para>
+        /// </c>
+        /// </summary>
+        public void DeleteTask(string filename)
+        {
+
         }
     }
 }
