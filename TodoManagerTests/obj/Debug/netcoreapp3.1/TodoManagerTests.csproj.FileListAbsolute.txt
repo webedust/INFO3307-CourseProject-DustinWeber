@@ -92,3 +92,6 @@ G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\bin\Debug\netcoreapp
 G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\bin\Debug\netcoreapp3.1\TodoManager.pdb
 G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.csproj.CopyComplete
 G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.genruntimeconfig.cache
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\bin\Debug\netcoreapp3.1\TodoManagerTests.pdb
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.dll
+G:\User Data\Github\INFO3307-CourseProject\TodoManagerTests\obj\Debug\netcoreapp3.1\TodoManagerTests.pdb

@@ -34,8 +34,8 @@
             this.LabelDueDate = new System.Windows.Forms.Label();
             this.ButtonCreateTask = new System.Windows.Forms.Button();
             this.ButtonCancel = new System.Windows.Forms.Button();
-            this.TextboxName = new System.Windows.Forms.RichTextBox();
-            this.TextboxDescription = new System.Windows.Forms.RichTextBox();
+            this.TB_Name = new System.Windows.Forms.RichTextBox();
+            this.TB_Description = new System.Windows.Forms.RichTextBox();
             this.CalendarDueDate = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
@@ -102,37 +102,37 @@
             this.ButtonCancel.UseVisualStyleBackColor = false;
             this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // TextboxName
+            // TB_Name
             // 
-            this.TextboxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.TextboxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextboxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxName.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextboxName.ForeColor = System.Drawing.Color.White;
-            this.TextboxName.Location = new System.Drawing.Point(150, 9);
-            this.TextboxName.Margin = new System.Windows.Forms.Padding(10);
-            this.TextboxName.MaxLength = 50;
-            this.TextboxName.Name = "TextboxName";
-            this.TextboxName.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.TextboxName.Size = new System.Drawing.Size(636, 31);
-            this.TextboxName.TabIndex = 2;
-            this.TextboxName.Text = "";
+            this.TB_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.TB_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TB_Name.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Name.ForeColor = System.Drawing.Color.White;
+            this.TB_Name.Location = new System.Drawing.Point(150, 9);
+            this.TB_Name.Margin = new System.Windows.Forms.Padding(10);
+            this.TB_Name.MaxLength = 50;
+            this.TB_Name.Name = "TB_Name";
+            this.TB_Name.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.TB_Name.Size = new System.Drawing.Size(636, 31);
+            this.TB_Name.TabIndex = 2;
+            this.TB_Name.Text = "";
             // 
-            // TextboxDescription
+            // TB_Description
             // 
-            this.TextboxDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.TextboxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextboxDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxDescription.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextboxDescription.ForeColor = System.Drawing.Color.White;
-            this.TextboxDescription.Location = new System.Drawing.Point(150, 51);
-            this.TextboxDescription.Margin = new System.Windows.Forms.Padding(10);
-            this.TextboxDescription.MaxLength = 300;
-            this.TextboxDescription.Name = "TextboxDescription";
-            this.TextboxDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.TextboxDescription.Size = new System.Drawing.Size(636, 82);
-            this.TextboxDescription.TabIndex = 2;
-            this.TextboxDescription.Text = "";
+            this.TB_Description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.TB_Description.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Description.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TB_Description.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TB_Description.ForeColor = System.Drawing.Color.White;
+            this.TB_Description.Location = new System.Drawing.Point(150, 51);
+            this.TB_Description.Margin = new System.Windows.Forms.Padding(10);
+            this.TB_Description.MaxLength = 300;
+            this.TB_Description.Name = "TB_Description";
+            this.TB_Description.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.TB_Description.Size = new System.Drawing.Size(636, 82);
+            this.TB_Description.TabIndex = 2;
+            this.TB_Description.Text = "";
             // 
             // CalendarDueDate
             // 
@@ -151,8 +151,8 @@
             this.CancelButton = this.ButtonCancel;
             this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.CalendarDueDate);
-            this.Controls.Add(this.TextboxDescription);
-            this.Controls.Add(this.TextboxName);
+            this.Controls.Add(this.TB_Description);
+            this.Controls.Add(this.TB_Name);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonCreateTask);
             this.Controls.Add(this.LabelDueDate);
@@ -173,8 +173,8 @@
         private System.Windows.Forms.Label LabelDueDate;
         private System.Windows.Forms.Button ButtonCreateTask;
         private System.Windows.Forms.Button ButtonCancel;
-        private System.Windows.Forms.RichTextBox TextboxName;
-        private System.Windows.Forms.RichTextBox TextboxDescription;
+        private System.Windows.Forms.RichTextBox TB_Name;
+        private System.Windows.Forms.RichTextBox TB_Description;
         private System.Windows.Forms.MonthCalendar CalendarDueDate;
     }
 }

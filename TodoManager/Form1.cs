@@ -5,28 +5,38 @@ using System.Windows.Forms;
 
 namespace TodoManager
 {
+    // Created by Dustin Weber
+    /// <summary>
+    /// Main form the user sees when launching the program.
+    /// Handles button presses and opening other forms in the program.
+    /// </summary>
     public partial class MainForm : Form
     {
         // Variables
-        readonly FileIO io = new FileIO();
         List<Button> taskBtns; // All buttons associated with a task loaded at runtime
+        int currentTask = -1; // Title of the currently selected task
 
 
         public MainForm() { InitializeComponent(); }
 
         void ButtonCreate_Click(object sender, EventArgs e)
         {
-            OpenCreateTask();
+            // Open "Create Task" form w. -1 task parameter since new task is being created
+            OpenCreateTask(-1);
         }
 
+        /// <summary>
+        /// Tries to delete currently selected task.
+        /// If the task successfully deletes then the task list view is refreshed.
+        /// </summary>
         void ButtonDelete_Click(object sender, EventArgs e)
         {
-
+            if (FileIO.DeleteTask(currentTask)) FillTasksList();
         }
 
         void ButtonUpdate_Click(object sender, EventArgs e)
         {
-            OpenCreateTask();
+            OpenCreateTask(currentTask);
         }
 
         void MainForm_Load(object sender, EventArgs e)
@@ -35,19 +45,23 @@ namespace TodoManager
         }
 
         /// <summary>
-        ///  Opens <c>Form_CreateTask</c>
+        /// <para>Opens <c>Form_CreateTask</c></para>
+        /// <c>
+        /// <para>Parameters</para>
+        /// <para>index: Index of task to modify, set -1 if new task is being created</para>
+        /// </c>
         /// </summary>
-        void OpenCreateTask()
+        void OpenCreateTask(int index)
         {
             Form_CreateTask form_createTask = new Form_CreateTask();
             MainForm main = (MainForm)Application.OpenForms[0];
 
             form_createTask.Show();
-            form_createTask.OnShow(main);
+            form_createTask.OnShow(main, index);
         }
 
         /// <summary>
-        ///  Fills the tasks list with Tasks from file
+        /// Fills the tasks list UI with Tasks from FileIO Tasks list
         /// </summary>
         public void FillTasksList()
         {
@@ -59,7 +73,8 @@ namespace TodoManager
             int height = 30; // Height of each task button
 
             // Disables & hides all task buttons if they have already been created
-            // This would apply when creating a new task so duplicate tasks are not shown
+            // This would apply when creating a new tasks or deleting a task
+            // This way duplicate tasks are not shown
             if (taskBtns != null)
             {
                 for (int i = 0; i < taskBtns.Count; i++)
@@ -72,14 +87,13 @@ namespace TodoManager
             }
             else taskBtns = new List<Button>();
 
+            FileIO.LoadTasks();
 
-            io.LoadTasks();
-
-            foreach (var t in io.tasks)
+            foreach (var task in FileIO.tasks)
             {
                 Button b = new Button();
-                b.Name = "ButtonTask" + t.title;
-                b.Text = t.title.ToString();
+                b.Name = "ButtonTask" + task.title;
+                b.Text = task.title.ToString();
 
                 // Cosmetic
                 b.BackColor = TasksPanel.BackColor;
@@ -91,7 +105,8 @@ namespace TodoManager
 
                 b.Click += delegate
                 {
-                    OutputTextbox.Text = t.description;
+                    currentTask = task.index;
+                    OutputTextbox.Text = task.description;
                 };
                 Controls.Add(b);
 
