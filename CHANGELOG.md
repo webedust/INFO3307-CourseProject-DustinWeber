@@ -2,9 +2,17 @@
 Running log of all changes made to the TodoManager program.
 
 ## Unreleased
-* Task modification
-* Set due dates & sort tasks based on dates
+* Set due dates 
+* Sort tasks based on due dates
 * Toggle task state between Complete/Incomplete
+
+## Pre-release 6 - 13 October, 2020
+### Added
+* Existing tasks can now be modified
+* Tasks can now be toggled between complete/incomplete
+
+### Changed
+* Tasks are now saved directly as Objects
 
 ## Pre-release 5 - 12 October, 2020
 ### Added

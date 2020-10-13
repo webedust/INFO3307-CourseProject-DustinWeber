@@ -26,16 +26,14 @@ namespace TodoManager
         /// <para>description: The description of the task</para>
         /// </c>
         /// </summary>
-        public static void SaveTask(string title, string description)
+        public static void SaveTask(Task task)
         {
+            // To-do: Check for illegal characters in title
             CheckDirExists();
             // Create new stream in the directory where this was started from
-            // To-do: Try doing this using Json.Serialize
-            StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + title + ".json");
-            w.WriteLine("[\n\t{");
-            w.WriteLine("\t\t\"title\": " + "\"" + title + "\",");
-            w.WriteLine("\t\t\"description\": " + "\"" + description +"\"");
-            w.WriteLine("\t}\n]");
+            StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + task.title + ".json");
+            string json = JsonConvert.SerializeObject(task);
+            w.Write("[" + json + "]"); // Must add [] because of how tasks implemented
             w.Close();
             // To-do: Change instead to only add the new file in this instance?
             // Else iterating across all tasks unnecessarily

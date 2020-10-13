@@ -1,4 +1,5 @@
 ﻿using System;
+using System.DirectoryServices.ActiveDirectory;
 using System.Windows.Forms;
 
 namespace TodoManager
@@ -11,8 +12,10 @@ namespace TodoManager
     public partial class Form_CreateTask : Form
     {
         // Variables
+        bool modifying; // True when modifying an existing task
+        int modifyTaskIndex; // Index of task being modified
         MainForm main;
-
+        
 
         public Form_CreateTask()
         {
@@ -30,19 +33,26 @@ namespace TodoManager
         public void OnShow(MainForm main, int index) 
         { 
             this.main = main;
-            // To-do: Can't modify a task currently
             // Checks if "task" parameter is greater than "default" value of -1
             if (index > -1)
             {
+                modifying = true;
+                modifyTaskIndex = index;
+
                 TB_Name.Text = FileIO.tasks[index].title;
                 TB_Description.Text = FileIO.tasks[index].description;
                 // To-do: Must also add due date, completion state here when added
             }
+            else modifying = false;
         }
 
         void ButtonCreateTask_Click(object sender, EventArgs e)
         {
-            FileIO.SaveTask(TB_Name.Text, TB_Description.Text);
+            // Delete task then re-save if modifying
+            if (modifying) FileIO.DeleteTask(modifyTaskIndex);
+            // To-do: Change due date from -1 to an actual date when it is implemented
+            Task newTask = new Task(TB_Name.Text, TB_Description.Text, -1);
+            FileIO.SaveTask(newTask);
             main.FillTasksList();
             Close();
         }
