@@ -34,6 +34,8 @@
             this.ButtonLoad = new System.Windows.Forms.Button();
             this.ButtonUpdate = new System.Windows.Forms.Button();
             this.TasksPanel = new System.Windows.Forms.Panel();
+            this.Label_TasksName = new System.Windows.Forms.Label();
+            this.Label_Info = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ButtonCreate
@@ -57,12 +59,12 @@
             this.OutputTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OutputTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.OutputTextbox.ForeColor = System.Drawing.Color.White;
-            this.OutputTextbox.Location = new System.Drawing.Point(468, 13);
+            this.OutputTextbox.Location = new System.Drawing.Point(468, 33);
             this.OutputTextbox.Margin = new System.Windows.Forms.Padding(10);
             this.OutputTextbox.Name = "OutputTextbox";
             this.OutputTextbox.ReadOnly = true;
             this.OutputTextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.OutputTextbox.Size = new System.Drawing.Size(775, 604);
+            this.OutputTextbox.Size = new System.Drawing.Size(775, 584);
             this.OutputTextbox.TabIndex = 2;
             this.OutputTextbox.Text = "Click on a task to the left to see its information.";
             // 
@@ -98,11 +100,29 @@
             // 
             this.TasksPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.TasksPanel.Enabled = false;
-            this.TasksPanel.Location = new System.Drawing.Point(13, 13);
+            this.TasksPanel.Location = new System.Drawing.Point(13, 33);
             this.TasksPanel.Name = "TasksPanel";
-            this.TasksPanel.Size = new System.Drawing.Size(444, 547);
+            this.TasksPanel.Size = new System.Drawing.Size(444, 527);
             this.TasksPanel.TabIndex = 3;
             this.TasksPanel.Visible = false;
+            // 
+            // Label_TasksName
+            // 
+            this.Label_TasksName.AutoSize = true;
+            this.Label_TasksName.Location = new System.Drawing.Point(13, 9);
+            this.Label_TasksName.Name = "Label_TasksName";
+            this.Label_TasksName.Size = new System.Drawing.Size(59, 21);
+            this.Label_TasksName.TabIndex = 4;
+            this.Label_TasksName.Text = "Tasks";
+            // 
+            // Label_Info
+            // 
+            this.Label_Info.AutoSize = true;
+            this.Label_Info.Location = new System.Drawing.Point(468, 9);
+            this.Label_Info.Name = "Label_Info";
+            this.Label_Info.Size = new System.Drawing.Size(105, 21);
+            this.Label_Info.TabIndex = 4;
+            this.Label_Info.Text = "Information";
             // 
             // MainForm
             // 
@@ -110,6 +130,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1257, 630);
+            this.Controls.Add(this.Label_Info);
+            this.Controls.Add(this.Label_TasksName);
             this.Controls.Add(this.TasksPanel);
             this.Controls.Add(this.ButtonUpdate);
             this.Controls.Add(this.ButtonLoad);
@@ -123,6 +145,7 @@
             this.Text = "ToDoManager";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,6 +156,8 @@
         private System.Windows.Forms.Button ButtonLoad;
         private System.Windows.Forms.Button ButtonUpdate;
         private System.Windows.Forms.Panel TasksPanel;
+        private System.Windows.Forms.Label Label_TasksName;
+        private System.Windows.Forms.Label Label_Info;
     }
 }
 

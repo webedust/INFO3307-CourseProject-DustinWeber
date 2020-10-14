@@ -41,6 +41,26 @@ namespace TodoManager
         }
 
         /// <summary>
+        /// <para>Checks specified string for illegal characters for use in a file name</para>
+        /// <para>Returns <c>true</c> if the task contains errors
+        /// <c>
+        /// <para>Parameters</para>
+        /// <para>s: String to check for illegal characters</para>
+        /// </c>
+        /// </summary>
+        public static bool ContainsIllegalChars(string s)
+        {
+            char[] illegalChars = 
+                { '\\', '/', ':', '"', '<', '>', '|' };
+            // Check if file name starts with $
+            if (s.StartsWith('$')) return true;
+            // Checks against array of illegal characters
+            for (int i = 0; i < illegalChars.Length; i++)
+                if (s.Contains(illegalChars[i])) return true;
+            return false;
+        }
+
+        /// <summary>
         /// <para>Loads <b>all</b> task files from Tasks directory</para>
         /// </summary>
         public static void LoadTasks()

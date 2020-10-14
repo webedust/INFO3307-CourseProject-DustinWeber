@@ -1,4 +1,5 @@
-﻿namespace TodoManager
+﻿using System;
+namespace TodoManager
 {
     // Created by Dustin Weber
     /// <summary>
@@ -9,9 +10,9 @@
         // Variables
         public string title;
         public string description;
-        public int dueDate;
+        public string dueDate;
         public bool isFinished;
-        public int timeFinished;
+        public string timeFinished;
 
         // Used when referencing this specific task in the FileIO Tasks list
         // It is set in LoadTasks()
@@ -20,7 +21,7 @@
 
         // Constructors
         public Task() {} // Default
-        public Task(string title, string description, int dueDate) // Parameters
+        public Task(string title, string description, string dueDate) // Parameters
         {
             this.title = title;
             this.description = description;

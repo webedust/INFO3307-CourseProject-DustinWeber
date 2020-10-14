@@ -1,5 +1,4 @@
 ﻿using System;
-using System.DirectoryServices.ActiveDirectory;
 using System.Windows.Forms;
 
 namespace TodoManager
@@ -33,7 +32,25 @@ namespace TodoManager
         public void OnShow(MainForm main, int index) 
         { 
             this.main = main;
+
+            // Add event listener to Due Date checkbox
+            CB_DueDate.CheckedChanged += delegate
+            {
+                // Hide due date calendar when checked since checkbox is for "No due date"
+                if (CB_DueDate.Checked)
+                {
+                    CalendarDueDate.Visible = false;
+                    CalendarDueDate.Enabled = false;
+                }
+                else
+                {
+                    CalendarDueDate.Enabled = true;
+                    CalendarDueDate.Visible = true;
+                }
+            };
+
             // Checks if "task" parameter is greater than "default" value of -1
+            // Assume a task is being modified if so
             if (index > -1)
             {
                 modifying = true;
@@ -41,7 +58,12 @@ namespace TodoManager
 
                 TB_Name.Text = FileIO.tasks[index].title;
                 TB_Description.Text = FileIO.tasks[index].description;
-                // To-do: Must also add due date, completion state here when added
+                // Set due date ONLY if it exists on the task being modified
+                if (FileIO.tasks[index].dueDate != "-1")
+                    CalendarDueDate.SetDate(DateTime.Parse(FileIO.tasks[index].dueDate));
+                // Else check the "No due date" (CB_DueDate) checkbox
+                else CB_DueDate.Checked = true;
+                // To-do: Must also completion state here when added
             }
             else modifying = false;
         }
@@ -51,10 +73,26 @@ namespace TodoManager
             // Delete task then re-save if modifying
             if (modifying) FileIO.DeleteTask(modifyTaskIndex);
             // To-do: Change due date from -1 to an actual date when it is implemented
-            Task newTask = new Task(TB_Name.Text, TB_Description.Text, -1);
-            FileIO.SaveTask(newTask);
-            main.FillTasksList();
-            Close();
+            string date;
+            // Due date is specified
+            if (!CB_DueDate.Checked)
+                date = CalendarDueDate.SelectionRange.Start.ToShortDateString();
+            // No due date specified
+            else date = "-1";
+            Task newTask = new Task(TB_Name.Text, TB_Description.Text, date);
+            
+            if (!FileIO.ContainsIllegalChars(TB_Name.Text)) // NO illegals in file name
+            {
+                FileIO.SaveTask(newTask);
+                main.FillTasksList();
+                Close();
+            }
+            else // Illegal chars in task (file) name, alert user and do not save
+            {
+                MessageBox.Show("Task name can't contain any of the following characters:\n" +
+                    "\\ / : ? \" < > |",
+                    "Illegal Characters In Task Name");
+            }
         }
 
         void ButtonCancel_Click(object sender, EventArgs e)

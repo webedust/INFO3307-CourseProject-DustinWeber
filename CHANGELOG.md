@@ -2,9 +2,21 @@
 Running log of all changes made to the TodoManager program.
 
 ## Unreleased
-* Set due dates 
 * Sort tasks based on due dates
-* Toggle task state between Complete/Incomplete
+
+## Pre-release 7 - 14 October, 2020
+### Fixed
+* User can not create a task containing illegal characters ( \ / : * ? " < > | )
+
+
+### Added
+* Tasks can now have due dates. If a due date is not set it will default to -1
+
+
+### Changed
+* Selected task's completion state is now also shown when viewing a task's information
+* Put headers on task list and task information sections in the main form
+
 
 ## Pre-release 6 - 13 October, 2020
 ### Added

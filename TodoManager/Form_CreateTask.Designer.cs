@@ -37,6 +37,7 @@
             this.TB_Name = new System.Windows.Forms.RichTextBox();
             this.TB_Description = new System.Windows.Forms.RichTextBox();
             this.CalendarDueDate = new System.Windows.Forms.MonthCalendar();
+            this.CB_DueDate = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // LabelName
@@ -139,9 +140,23 @@
             this.CalendarDueDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.CalendarDueDate.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalendarDueDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.CalendarDueDate.Location = new System.Drawing.Point(150, 152);
+            this.CalendarDueDate.Location = new System.Drawing.Point(150, 189);
+            this.CalendarDueDate.MaxSelectionCount = 1;
+            this.CalendarDueDate.MinDate = new System.DateTime(2000, 12, 25, 23, 59, 59, 0);
             this.CalendarDueDate.Name = "CalendarDueDate";
             this.CalendarDueDate.TabIndex = 3;
+            // 
+            // CB_DueDate
+            // 
+            this.CB_DueDate.AutoSize = true;
+            this.CB_DueDate.Font = new System.Drawing.Font("Liberation Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CB_DueDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.CB_DueDate.Location = new System.Drawing.Point(150, 152);
+            this.CB_DueDate.Name = "CB_DueDate";
+            this.CB_DueDate.Size = new System.Drawing.Size(132, 25);
+            this.CB_DueDate.TabIndex = 0;
+            this.CB_DueDate.Text = "No due date";
+            this.CB_DueDate.UseVisualStyleBackColor = true;
             // 
             // Form_CreateTask
             // 
@@ -150,6 +165,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.CancelButton = this.ButtonCancel;
             this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.CB_DueDate);
             this.Controls.Add(this.CalendarDueDate);
             this.Controls.Add(this.TB_Description);
             this.Controls.Add(this.TB_Name);
@@ -176,5 +192,6 @@
         private System.Windows.Forms.RichTextBox TB_Name;
         private System.Windows.Forms.RichTextBox TB_Description;
         private System.Windows.Forms.MonthCalendar CalendarDueDate;
+        private System.Windows.Forms.CheckBox CB_DueDate;
     }
 }

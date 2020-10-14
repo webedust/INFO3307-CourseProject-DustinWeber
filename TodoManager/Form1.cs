@@ -146,6 +146,7 @@ namespace TodoManager
                 c.CheckedChanged += delegate
                 {
                     task.isFinished = c.Checked;
+                    task.timeFinished = DateTime.Now.ToShortDateString();
                     ShowTaskInfo(task.index);
                     FileIO.SaveTask(task);
                 };
@@ -167,7 +168,24 @@ namespace TodoManager
         void ShowTaskInfo(int index)
         {
             currentTask = index;
-            OutputTextbox.Text = FileIO.tasks[index].description;
+
+            // --- Description ---
+            OutputTextbox.Text =
+                FileIO.tasks[index].description + "\n\n";
+
+            // --- Due date ---
+            // Show true due date if it is NOT -1
+            // Otherwise show "No due date"
+            if (FileIO.tasks[index].dueDate != "-1")
+                OutputTextbox.Text += "Due date: " + FileIO.tasks[index].dueDate;
+            else OutputTextbox.Text += "Due date: None";
+
+            OutputTextbox.Text += "\n\n";
+
+            // --- Completion state ---
+            if (FileIO.tasks[index].isFinished)
+                OutputTextbox.Text += "Task Finished on " + FileIO.tasks[index].timeFinished;
+            else OutputTextbox.Text += "Task Incomplete";
         }
     }
 }
