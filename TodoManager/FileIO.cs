@@ -20,43 +20,28 @@ namespace TodoManager
 
         /// <summary>
         /// <para>Saves file to the Tasks directory</para>
+        /// <para>Returns true if the task saved successfully</para>
         /// <c>
         /// <para>Parameters</para>
         /// <para>title: Name of task (also used for file name)</para>
         /// <para>description: The description of the task</para>
         /// </c>
         /// </summary>
-        public static void SaveTask(Task task)
+        public static bool SaveTask(Task task)
         {
-            // To-do: Check for illegal characters in title
-            CheckDirExists();
-            // Create new stream in the directory where this was started from
-            StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + task.title + ".json");
-            string json = JsonConvert.SerializeObject(task);
-            w.Write("[" + json + "]"); // Must add [] because of how tasks implemented
-            w.Close();
-            // To-do: Change instead to only add the new file in this instance?
-            // Else iterating across all tasks unnecessarily
-            LoadTasks(); // Load all tasks again to update
-        }
-
-        /// <summary>
-        /// <para>Checks specified string for illegal characters for use in a file name</para>
-        /// <para>Returns <c>true</c> if the task contains errors
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>s: String to check for illegal characters</para>
-        /// </c>
-        /// </summary>
-        public static bool ContainsIllegalChars(string s)
-        {
-            char[] illegalChars = 
-                { '\\', '/', ':', '"', '<', '>', '|' };
-            // Check if file name starts with $
-            if (s.StartsWith('$')) return true;
-            // Checks against array of illegal characters
-            for (int i = 0; i < illegalChars.Length; i++)
-                if (s.Contains(illegalChars[i])) return true;
+            if (!string.IsNullOrEmpty(task.title) && !ContainsIllegalChars(task.title))
+            {
+                CheckDirExists();
+                // Create new stream in the directory where this was started from
+                StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + task.title + ".json");
+                string json = JsonConvert.SerializeObject(task);
+                w.Write("[" + json + "]"); // Must add [] because of how tasks implemented
+                w.Close();
+                // To-do: Change instead to only add the new file in this instance?
+                // Else iterating across all tasks unnecessarily
+                LoadTasks(); // Load all tasks again to update
+                return true;
+            }
             return false;
         }
 
@@ -95,8 +80,7 @@ namespace TodoManager
         /// <para>Deletes file from Tasks sub-directory if found.
         /// Otherwise alerts the user via MessageBox that the file was not found
         /// OR if the user presses Delete when no task is selected.</para>
-        /// <para>Returns <c>true</c> if the task is successfully deleted.
-        /// Returns false otherwise.</para>
+        /// <para>Returns true if the task was successfully deleted
         /// <c>
         /// <para>Parameters</para>
         /// <para>i: Index of task to delete</para>
@@ -106,7 +90,7 @@ namespace TodoManager
         {
             CheckDirExists();
 
-            if (i == -1) // No task specified, alert user
+            if (i < 0) // No task specified, alert user
             {
                 string text = "You must select a task to delete.";
                 string caption = "No Task Selected"; // Header of the message box
@@ -145,5 +129,27 @@ namespace TodoManager
             if (!Directory.Exists(Application.StartupPath + "\\Tasks\\"))
                 Directory.CreateDirectory(Application.StartupPath + "\\Tasks\\");
         }
+
+
+        /// <summary>
+        /// <para>Checks specified string for illegal characters for use in a file name</para>
+        /// <para>Returns true if the string contains illegal characters</para>
+        /// <c>
+        /// <para>Parameters</para>
+        /// <para>s: String to check for illegal characters</para>
+        /// </c>
+        /// </summary>
+        static bool ContainsIllegalChars(string s)
+        {
+            char[] illegalChars =
+                { '\\', '/', ':', '"', '<', '>', '|' };
+            // Check if file name starts with $
+            if (s.StartsWith('$')) return true;
+            // Checks against array of illegal characters
+            for (int i = 0; i < illegalChars.Length; i++)
+                if (s.Contains(illegalChars[i])) return true;
+            return false;
+        }
+
     }
 }

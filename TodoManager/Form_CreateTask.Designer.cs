@@ -176,6 +176,7 @@
             this.Controls.Add(this.LabelName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_CreateTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Task";
             this.ResumeLayout(false);
             this.PerformLayout();

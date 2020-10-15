@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\TodoManager",
-    "\\TodoManager\\bin",
-    "\\TodoManager\\bin\\Debug",
-    "\\TodoManager\\bin\\Debug\\netcoreapp3.1"
+    "\\TodoManager\\bin"
   ],
-  "SelectedNode": "\\TodoManager\\FileIO.cs",
+  "SelectedNode": "\\TodoManager\\Form_CreateTask.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -4,6 +4,14 @@ Running log of all changes made to the TodoManager program.
 ## Unreleased
 * Sort tasks based on due dates
 
+## v1.0 - 15 October, 2020
+### Fixed
+* User can not create an empty task
+
+### Changed
+* Modifying a task will change the text of the "Create Task" button to "Modify Task"
+
+
 ## Pre-release 7 - 14 October, 2020
 ### Fixed
 * User can not create a task containing illegal characters ( \ / : * ? " < > | )

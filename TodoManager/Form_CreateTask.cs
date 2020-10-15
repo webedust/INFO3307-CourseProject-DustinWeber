@@ -56,6 +56,8 @@ namespace TodoManager
                 modifying = true;
                 modifyTaskIndex = index;
 
+                ButtonCreateTask.Text = "Modify Task";
+
                 TB_Name.Text = FileIO.tasks[index].title;
                 TB_Description.Text = FileIO.tasks[index].description;
                 // Set due date ONLY if it exists on the task being modified
@@ -81,17 +83,16 @@ namespace TodoManager
             else date = "-1";
             Task newTask = new Task(TB_Name.Text, TB_Description.Text, date);
             
-            if (!FileIO.ContainsIllegalChars(TB_Name.Text)) // NO illegals in file name
+            if (FileIO.SaveTask(newTask)) // File saved successfully
             {
-                FileIO.SaveTask(newTask);
                 main.FillTasksList();
                 Close();
             }
             else // Illegal chars in task (file) name, alert user and do not save
             {
                 MessageBox.Show("Task name can't contain any of the following characters:\n" +
-                    "\\ / : ? \" < > |",
-                    "Illegal Characters In Task Name");
+                    "\\ / : ? \" < > | and can't be empty",
+                    "Invalid Task Name");
             }
         }
 

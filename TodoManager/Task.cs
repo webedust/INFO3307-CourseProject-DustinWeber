@@ -1,5 +1,4 @@
-﻿using System;
-namespace TodoManager
+﻿namespace TodoManager
 {
     // Created by Dustin Weber
     /// <summary>
