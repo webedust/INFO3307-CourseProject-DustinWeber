@@ -26,6 +26,16 @@ namespace TodoManagerTests
         }
 
         //[TestMethod]
+        //public void LoadTasks() // Load tasks
+        //{
+        //    // To-do
+        //    const bool expected = false;
+        //    FileIO.LoadTasks();
+
+        //    Assert.AreEqual(expected, result);
+        //}
+
+        //[TestMethod]
         //public void TestMethodTemplate()
         //{
         //    using var sw = new StringWriter();

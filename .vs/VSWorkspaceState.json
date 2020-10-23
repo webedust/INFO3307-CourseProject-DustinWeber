@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\STABLE",
+    "\\STABLE\\Tasks",
     "\\TodoManager",
     "\\TodoManager\\bin"
   ],
-  "SelectedNode": "\\TodoManager\\Form_CreateTask.cs",
+  "SelectedNode": "\\STABLE\\Tasks",
   "PreviewInSolutionExplorer": false
 }
