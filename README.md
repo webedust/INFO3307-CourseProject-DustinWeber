@@ -1,6 +1,7 @@
 # TodoManager
 ## Table of Contents
 [Description](#description)  
+[Style Guideline](#style)  
 [Installation](#installation)  
 [Usage](#usage)  
 [Credits](#credits)  
@@ -9,6 +10,15 @@
 
 ## Description
 TodoManager reads and writes tasks as json and can sort them based on due dates.
+
+## Style Guideline
+TodoManager is programmed following a modified form of [Microsoft's C# Coding Conventions style guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions).
+The modifications are as follows
+
+* Comments are placed on the same line as code if it does not impact readability.
+* If statements and the code they execute are placed on the same line if they do not impact readability.
+* When declaring multiple variables (such as at the start of a class) they are sorted alphabetically unless 
+context makes more sense to group them. In cases where variables are not sorted alphabetically an explicit explanatory comment is made.
 
 ## Installation
 TodoManager can be installed by downloading the latest stable build and running it on your computer.

@@ -25,15 +25,22 @@ namespace TodoManagerTests
             Assert.AreEqual(expected, result);
         }
 
-        //[TestMethod]
-        //public void LoadTasks() // Load tasks
-        //{
-        //    // To-do
-        //    const bool expected = false;
-        //    FileIO.LoadTasks();
+        [TestMethod]
+        public void LoadTasks() // Load tasks
+        {
+            const bool expected = false;
+            bool errorOccurred = false; // True = error occurred
+            try
+            {
+                FileIO.LoadTasks();
+            }
+            catch (System.NullReferenceException) // Files don't load correctly
+            {
+                errorOccurred = true;
+            }
 
-        //    Assert.AreEqual(expected, result);
-        //}
+            Assert.AreEqual(expected, errorOccurred);
+        }
 
         //[TestMethod]
         //public void TestMethodTemplate()

@@ -7,6 +7,7 @@
     public class Task
     {
         // Variables
+        // Sorted in order of how they are saved in file
         public string title;
         public string description;
         public string dueDate;
