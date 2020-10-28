@@ -1,2 +1,2 @@
 language: csharp
-solution: TodoManager.sln
+solution: ./TodoManager/TodoManager.sln
