@@ -29,17 +29,20 @@ namespace TodoManagerTests
         public void LoadTasks() // Load tasks
         {
             const bool expected = false;
-            bool errorOccurred = false; // True = error occurred
+            bool result = false; // True if any part of test fails
             try
             {
                 FileIO.LoadTasks();
             }
             catch (System.NullReferenceException) // Files don't load correctly
             {
-                errorOccurred = true;
+                // Set result true because error occurred
+                result = true;
             }
+            // Set result true if LoadTasks did not populate Tasks list (still null)
+            if (FileIO.tasks == null) result = true;
 
-            Assert.AreEqual(expected, errorOccurred);
+            Assert.AreEqual(expected, result);
         }
 
         //[TestMethod]
