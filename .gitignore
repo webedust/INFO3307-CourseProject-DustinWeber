@@ -20,3 +20,9 @@
 /TodoManagerTests/bin/Debug/netcoreapp3.1/tr
 /TodoManagerTests/bin/Debug/netcoreapp3.1/zh-Hans
 /TodoManagerTests/bin/Debug/netcoreapp3.1/zh-Hant
+.vs/
+.vs/slnx.sqlite
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+TodoManager/.vs/TodoManager/v16/.suo
+TodoManager/obj/Debug/netcoreapp3.1/TodoManager.csprojAssemblyReference.cache
