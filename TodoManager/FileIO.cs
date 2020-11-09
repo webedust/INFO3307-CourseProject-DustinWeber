@@ -18,15 +18,9 @@ namespace TodoManager
         public static List<Task> tasks; // List of all tasks read from files
 
 
-        /// <summary>
-        /// <para>Saves file to the Tasks directory</para>
-        /// <para>Returns true if the task saved successfully</para>
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>title: Name of task (also used for file name)</para>
-        /// <para>description: The description of the task</para>
-        /// </c>
-        /// </summary>
+        /// <summary> Saves file to the Tasks directory </summary>
+        /// <param name="task">Name of task (also used for file name)</param>
+        /// <returns>True if the task saves successfully</returns>
         public static bool SaveTask(Task task)
         {
             if (!string.IsNullOrEmpty(task.title) && !ContainsIllegalChars(task.title))
@@ -77,15 +71,12 @@ namespace TodoManager
         }
 
         /// <summary>
-        /// <para>Deletes file from Tasks sub-directory if found.
+        /// Deletes file from Tasks sub-directory if found.
         /// Otherwise alerts the user via MessageBox that the file was not found
-        /// OR if the user presses Delete when no task is selected.</para>
-        /// <para>Returns true if the task was successfully deleted
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>i: Index of task to delete</para>
-        /// </c>
+        /// OR if the user presses Delete when no task is selected.
         /// </summary>
+        /// <param name="i">Index of task to delete</param>
+        /// <returns>True if the task was successfully deleted</returns>
         public static bool DeleteTask(int i)
         {
             CheckDirExists();
@@ -120,9 +111,8 @@ namespace TodoManager
         }
 
         /// <summary>
-        /// <para>Checks if the "Tasks" directory exists, 
-        /// creates the directory if it does not.
-        /// This function should be called at the start of every other File IO function.</para>
+        /// Checks if Tasks directory exists, creates the directory if it does not.
+        /// This function should be called at the start of every other File IO function.
         /// </summary>
         static void CheckDirExists()
         {
@@ -131,14 +121,9 @@ namespace TodoManager
         }
 
 
-        /// <summary>
-        /// <para>Checks specified string for illegal characters for use in a file name</para>
-        /// <para>Returns true if the string contains illegal characters</para>
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>s: String to check for illegal characters</para>
-        /// </c>
-        /// </summary>
+        /// <summary> Checks specified string for illegal characters for use in a file name </summary>
+        /// <param name="s">String to check for illegal characters</param>
+        /// <returns>True if string contains illegal characters</returns>
         static bool ContainsIllegalChars(string s)
         {
             char[] illegalChars =

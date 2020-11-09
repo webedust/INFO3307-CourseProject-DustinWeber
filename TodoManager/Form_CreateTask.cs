@@ -21,14 +21,9 @@ namespace TodoManager
             InitializeComponent();
         }
 
-        /// <summary>
-        /// <para>Called whenever this Form is being shown</para>
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>main: Main form where this form is being opened from.</para>
-        /// <para>task: Index of task being modified. Set null if creating new task</para>
-        /// </c>
-        /// </summary>
+        /// <summary> Called whenever this Form is being shown </summary>
+        /// <param name="main">Main form where this form is being opened from.</param>
+        /// <param name="index">Index of task being modified. Set null if creating new task</param>
         public void OnShow(MainForm main, int index) 
         { 
             this.main = main;
@@ -74,7 +69,6 @@ namespace TodoManager
         {
             // Delete task then re-save if modifying
             if (modifying) FileIO.DeleteTask(modifyTaskIndex);
-            // To-do: Change due date from -1 to an actual date when it is implemented
             string date;
             // Due date is specified
             if (!CB_DueDate.Checked)

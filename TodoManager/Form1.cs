@@ -49,13 +49,8 @@ namespace TodoManager
         // ----- End of Timed functions -----
 
 
-        /// <summary>
-        /// <para>Opens <c>Form_CreateTask</c></para>
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>index: Index of task to modify, set -1 if new task is being created</para>
-        /// </c>
-        /// </summary>
+        /// <summary> Opens Form_CreateTask </summary>
+        /// <param name="index">Index of task to modify, set -1 if new task is being created</param>
         void OpenCreateTask(int index)
         {
             Form_CreateTask form_createTask = new Form_CreateTask();
@@ -65,9 +60,7 @@ namespace TodoManager
             form_createTask.OnShow(main, index);
         }
 
-        /// <summary>
-        /// Fills the tasks list UI with Tasks from FileIO Tasks list
-        /// </summary>
+        /// <summary> Fills the tasks list UI with Tasks from FileIO Tasks list </summary>
         public void FillTasksList()
         {
             // Variables
@@ -158,13 +151,8 @@ namespace TodoManager
             }
         }
 
-        /// <summary>
-        /// <para>Shows task information for the task @ index</para>
-        /// <c>
-        /// <para>Parameters</para>
-        /// <para>index: Index of task to show the information of</para>
-        /// </c>
-        /// </summary>
+        /// <summary> Shows task information for the task @ index </summary>
+        /// <param name="index">Index of task to show the information of</param>
         void ShowTaskInfo(int index)
         {
             currentTask = index;

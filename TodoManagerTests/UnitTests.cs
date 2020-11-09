@@ -45,15 +45,17 @@ namespace TodoManagerTests
             Assert.AreEqual(expected, result);
         }
 
-        //[TestMethod]
-        //public void TestMethodTemplate()
-        //{
-        //    using var sw = new StringWriter();
-        //    Console.SetOut(sw);
-        //    TodoManager.FileIO.ContainsIllegalChars("\\This should return true");
+        /*
+        [TestMethod]
+        public void TestMethodTemplate()
+        {
+            using var sw = new StringWriter();
+            Console.SetOut(sw);
+            TodoManager.FileIO.ContainsIllegalChars("\\This should return true");
 
-        //    var result = sw.ToString().Trim();
-        //    Assert.AreEqual(expected, result);
-        //}
+            var result = sw.ToString().Trim();
+            Assert.AreEqual(expected, result);
+        }
+        */
     }
 }
