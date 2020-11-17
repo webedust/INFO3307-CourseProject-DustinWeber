@@ -23,11 +23,11 @@ namespace TodoManager
         /// <returns>True if the task saves successfully</returns>
         public static bool SaveTask(Task task)
         {
-            if (!string.IsNullOrEmpty(task.title) && !ContainsIllegalChars(task.title))
+            if (!string.IsNullOrEmpty(task.Title) && !ContainsIllegalChars(task.Title))
             {
                 CheckDirExists();
                 // Create new stream in the directory where this was started from
-                StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + task.title + ".json");
+                StreamWriter w = new StreamWriter(Application.StartupPath + "\\Tasks\\" + task.Title + ".json");
                 string json = JsonConvert.SerializeObject(task);
                 w.Write("[" + json + "]"); // Must add [] because of how tasks implemented
                 w.Close();
@@ -39,9 +39,7 @@ namespace TodoManager
             return false;
         }
 
-        /// <summary>
-        /// <para>Loads <b>all</b> task files from Tasks directory</para>
-        /// </summary>
+        /// <summary> Loads all task files from Tasks directory </summary>
         public static void LoadTasks()
         {
             CheckDirExists();
@@ -90,7 +88,7 @@ namespace TodoManager
             else // Task specified
             {
                 // Variables
-                string title = tasks[i].title;
+                string title = tasks[i].Title;
                 string path = Application.StartupPath + "\\Tasks\\" + title + ".json";
 
                 if (File.Exists(path))

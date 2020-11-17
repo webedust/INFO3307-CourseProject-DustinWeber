@@ -1,18 +1,16 @@
 ﻿namespace TodoManager
 {
     // Created by Dustin Weber
-    /// <summary>
-    /// Task object
-    /// </summary>
+    /// <summary> Task object </summary>
     public class Task
     {
         // Variables
         // Sorted in order of how they are saved in file
-        public string title;
-        public string description;
-        public string dueDate;
-        public bool isFinished;
-        public string timeFinished;
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string DueDate { get; set; }
+        public bool IsFinished { get; set; }
+        public string TimeFinished { get; set; }
 
         // Used when referencing this specific task in the FileIO Tasks list
         // It is set in LoadTasks()
@@ -20,12 +18,12 @@
 
 
         // Constructors
-        public Task() {} // Default
+        public Task() { } // Default
         public Task(string title, string description, string dueDate) // Parameters
         {
-            this.title = title;
-            this.description = description;
-            this.dueDate = dueDate;
+            Title = title;
+            Description = description;
+            DueDate = dueDate;
         }
     }
 }

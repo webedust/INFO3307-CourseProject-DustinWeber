@@ -53,11 +53,11 @@ namespace TodoManager
 
                 ButtonCreateTask.Text = "Modify Task";
 
-                TB_Name.Text = FileIO.tasks[index].title;
-                TB_Description.Text = FileIO.tasks[index].description;
+                TB_Name.Text = FileIO.tasks[index].Title;
+                TB_Description.Text = FileIO.tasks[index].Description;
                 // Set due date ONLY if it exists on the task being modified
-                if (FileIO.tasks[index].dueDate != "-1")
-                    CalendarDueDate.SetDate(DateTime.Parse(FileIO.tasks[index].dueDate));
+                if (FileIO.tasks[index].DueDate != "-1")
+                    CalendarDueDate.SetDate(DateTime.Parse(FileIO.tasks[index].DueDate));
                 // Else check the "No due date" (CB_DueDate) checkbox
                 else CB_DueDate.Checked = true;
                 // To-do: Must also completion state here when added

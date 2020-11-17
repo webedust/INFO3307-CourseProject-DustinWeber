@@ -107,8 +107,8 @@ namespace TodoManager
                 // Button
                 Button b = new Button
                 {
-                    Name = "ButtonTask" + task.title,
-                    Text = task.title.ToString(),
+                    Name = "ButtonTask" + task.Title,
+                    Text = task.Title.ToString(),
 
                     // Cosmetic
                     BackColor = TasksPanel.BackColor,
@@ -129,17 +129,17 @@ namespace TodoManager
                 // Checkbox
                 CheckBox c = new CheckBox
                 {
-                    Name = "CBTask" + task.title,
+                    Name = "CBTask" + task.Title,
                     Size = new Size(cSize, cSize),
                     Location = new Point(loc[0], loc[1])
                 };
                 // Initial checked state based on completion in Task object
-                c.Checked = task.isFinished;
+                c.Checked = task.IsFinished;
 
                 c.CheckedChanged += delegate
                 {
-                    task.isFinished = c.Checked;
-                    task.timeFinished = DateTime.Now.ToShortDateString();
+                    task.IsFinished = c.Checked;
+                    task.TimeFinished = DateTime.Now.ToShortDateString();
                     ShowTaskInfo(task.index);
                     FileIO.SaveTask(task);
                 };
@@ -159,20 +159,20 @@ namespace TodoManager
 
             // --- Description ---
             OutputTextbox.Text =
-                FileIO.tasks[index].description + "\n\n";
+                FileIO.tasks[index].Description + "\n\n";
 
             // --- Due date ---
             // Show true due date if it is NOT -1
             // Otherwise show "No due date"
-            if (FileIO.tasks[index].dueDate != "-1")
-                OutputTextbox.Text += "Due date: " + FileIO.tasks[index].dueDate;
+            if (FileIO.tasks[index].DueDate != "-1")
+                OutputTextbox.Text += "Due date: " + FileIO.tasks[index].DueDate;
             else OutputTextbox.Text += "Due date: None";
 
             OutputTextbox.Text += "\n\n";
 
             // --- Completion state ---
-            if (FileIO.tasks[index].isFinished)
-                OutputTextbox.Text += "Task Finished on " + FileIO.tasks[index].timeFinished;
+            if (FileIO.tasks[index].IsFinished)
+                OutputTextbox.Text += "Task Finished on " + FileIO.tasks[index].TimeFinished;
             else OutputTextbox.Text += "Task Incomplete";
         }
     }

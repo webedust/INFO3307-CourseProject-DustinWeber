@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z49TkfdC4/BxjdVO/9FbvftBeGwDBBNkuLBhuDQKTk/RCC4XcP42XGIa4iuNQ/8LpSbW2mwBnpljG/sSBI9JIA==",
+  "success": true,
+  "projectFilePath": "G:\\User Data\\Github\\INFO3307-CourseProject\\TodoManagerWeb\\TodoManagerWeb.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

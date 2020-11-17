@@ -26,3 +26,4 @@
 .vs/VSWorkspaceState.json
 TodoManager/.vs/TodoManager/v16/.suo
 TodoManager/obj/Debug/netcoreapp3.1/TodoManager.csprojAssemblyReference.cache
+*.sln

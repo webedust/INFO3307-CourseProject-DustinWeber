@@ -3,6 +3,14 @@ Running log of all changes made to the TodoManager program.
 
 ## Unreleased
 * Sort tasks based on due dates
+* Create tasks from browser
+* Modify tasks from browser
+* Delete tasks from browser
+
+## Web Pre-release 1 - 17 November, 2020
+### Added
+* All tasks can now be viewed from the browser via the TodoManagerWeb project
+
 
 ## v1.0 - 15 October, 2020
 ### Fixed
