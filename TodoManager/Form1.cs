@@ -41,12 +41,12 @@ namespace TodoManager
         }
 
 
-        // ----- Timed functions -----
+        // Timed functions
         void MainForm_Load(object sender, EventArgs e) // On Awake
         {
             FillTasksList();
         }
-        // ----- End of Timed functions -----
+        // End of Timed functions
 
 
         /// <summary> Opens Form_CreateTask </summary>

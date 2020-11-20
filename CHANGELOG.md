@@ -7,6 +7,13 @@ Running log of all changes made to the TodoManager program.
 * Modify tasks from browser
 * Delete tasks from browser
 
+## v1.1 - 20 November, 2020
+### Added
+* Test tasks added to web Tasks directory to show functionality
+
+### Fixed
+* User can no longer create a task with line breaks
+
 ## Web Pre-release 1 - 17 November, 2020
 ### Added
 * All tasks can now be viewed from the browser via the TodoManagerWeb project

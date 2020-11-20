@@ -18,9 +18,10 @@ namespace TodoManager
         public static List<Task> tasks; // List of all tasks read from files
 
 
+        // Save
         /// <summary> Saves file to the Tasks directory </summary>
         /// <param name="task">Name of task (also used for file name)</param>
-        /// <returns>True if the task saves successfully</returns>
+        /// <returns>True if successfully saved</returns>
         public static bool SaveTask(Task task)
         {
             if (!string.IsNullOrEmpty(task.Title) && !ContainsIllegalChars(task.Title))
@@ -39,6 +40,7 @@ namespace TodoManager
             return false;
         }
 
+        // Load
         /// <summary> Loads all task files from Tasks directory </summary>
         public static void LoadTasks()
         {
@@ -133,6 +135,5 @@ namespace TodoManager
                 if (s.Contains(illegalChars[i])) return true;
             return false;
         }
-
     }
 }

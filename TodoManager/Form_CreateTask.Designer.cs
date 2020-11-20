@@ -113,6 +113,7 @@
             this.TB_Name.Location = new System.Drawing.Point(150, 9);
             this.TB_Name.Margin = new System.Windows.Forms.Padding(10);
             this.TB_Name.MaxLength = 50;
+            this.TB_Name.Multiline = false;
             this.TB_Name.Name = "TB_Name";
             this.TB_Name.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.TB_Name.Size = new System.Drawing.Size(636, 31);

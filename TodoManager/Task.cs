@@ -4,7 +4,7 @@
     /// <summary> Task object </summary>
     public class Task
     {
-        // Variables
+        // Attributes
         // Sorted in order of how they are saved in file
         public string Title { get; set; }
         public string Description { get; set; }
